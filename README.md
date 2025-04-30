@@ -12,3 +12,64 @@ short_description: App analyzing images using Gemini AI Vision.
 ---
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
+
+---
+## Setup
+
+Create a .env_1 file with a API key just pasted within it 
+
+your key could be `AIzaSyXXXXXX`
+
+then 
+
+```bash
+nano .env_1
+```
+
+paste key
+
+> paste key `.env_1` terminal
+
+```
+AIzaSyXXXXXX
+```
+
+press [CTRL + C]
+
+should fix any API errors at the start.
+
+## Install
+
+Use Conda > See Miniconda-linux oneliner
+
+```bash
+git clone https://github.com/JoMfN/GV-analyser.git
+```
+
+--- 
+
+```bash
+conda create -n GVanalyser python=3.11 -y
+```
+
+---
+
+
+```bash
+cd GV-analyser
+conda activate GVanalyser
+pip install -r requirements.txt
+```
+
+update Pip if prompted
+
+```bash
+streamlit run appV0p5.py
+```
+
+Navigate to `localhost:8501` in your browser
+
+```browser
+localhost:8501
+```
