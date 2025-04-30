@@ -1,0 +1,6 @@
+streamlit
+google-generativeai 
+ruff
+pillow==10.*
+jsons
+pydantic
