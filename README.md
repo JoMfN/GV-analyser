@@ -15,29 +15,7 @@ Check out the configuration reference at https://huggingface.co/docs/hub/spaces-
 
 
 ---
-## Setup
 
-Create a .env_1 file with a API key just pasted within it 
-
-your key could be `AIzaSyXXXXXX`
-
-then 
-
-```bash
-nano .env_1
-```
-
-paste key
-
-> paste key `.env_1` terminal
-
-```
-AIzaSyXXXXXX
-```
-
-press [CTRL + C]
-
-should fix any API errors at the start.
 
 ## Install
 
@@ -64,6 +42,32 @@ pip install -r requirements.txt
 
 update Pip if prompted
 
+## Setup Key
+
+Create a .env_1 file with a API key just pasted within it 
+
+your key could be `AIzaSyXXXXXX`
+
+then 
+
+```bash
+nano .env_1
+```
+
+paste key
+
+> paste key `.env_1` terminal
+
+```
+AIzaSyXXXXXX
+```
+
+press [CTRL + C]
+
+should fix any API errors at the start.
+
+## Fire it up
+
 ```bash
 streamlit run appV0p5.py
 ```
@@ -71,5 +75,5 @@ streamlit run appV0p5.py
 Navigate to `localhost:8501` in your browser
 
 ```browser
-localhost:8501
+[localhost:8501](http://localhost:8501)
 ```
