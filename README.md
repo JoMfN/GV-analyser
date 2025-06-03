@@ -11,7 +11,6 @@ license: mit
 short_description: App analyzing images using Gemini AI Vision.
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
 
 ---
@@ -74,6 +73,6 @@ streamlit run appV0p5.py
 
 Navigate to `localhost:8501` in your browser
 
-```browser
+
 [localhost:8501](http://localhost:8501)
-```
+
