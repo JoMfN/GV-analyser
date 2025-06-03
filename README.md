@@ -8,6 +8,8 @@ short_description: App analyzing images using Gemini AI Vision.
 python version=3.11
 ---
 
+
+---
 ## Install
 
 Use Conda > See Miniconda-linux oneliner
