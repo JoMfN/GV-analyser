@@ -35,9 +35,30 @@ genai.configure(api_key=GOOGLE_API_KEY)
 
 # Load models
 text_model = genai.GenerativeModel("gemini-2.0-flash-exp")
-vision_model = genai.GenerativeModel("learnlm-1.5-pro-experimental")
+vision_model = genai.GenerativeModel("gemini-2.0-flash-thinking-exp-01-21")
 # Default OCR prompt
-default_prompt = """Transcribe all printed and handwritten text on this label of a specimen from a collection of a museum for natural history, being especially careful to preserve any scientific names, dates, and location information. Maintain the original formatting and line breaks with exception of the NURI (an URL starting with http://coll.mfn-berlin.de/u/{HEXhash} ) the label with QR-code should have the full URL displayed in the output."""
+# default_prompt = """Transcribe all printed and handwritten text on this label of a specimen from a collection of a museum for natural history, being especially careful to preserve any scientific names, dates, and location information. Maintain the original formatting and line breaks with exception of the NURI (an URL starting with http://coll.mfn-berlin.de/u/{HEXhash} ) the label with QR-code should have the full URL displayed in the output."""
+
+default_prompt = """You are given an image containing multiple specimen labels from a natural history museum collection.
+
+Transcribe all printed and handwritten text on this label of a specimen from a collection of a museum for natural history, being especially careful to preserve any scientific names, dates, and location information. Maintain the original formatting and line breaks with exception of the NURI (an URL starting with http://coll.mfn-berlin.de/u/{HEXhash}) — the label with QR-code should have the full URL displayed in the output.
+
+Please extract the text from each distinct label individually, and return the output as a list of labeled code blocks.
+
+Use this format:
+
+```label 1
+<text from the first label> 
+```
+
+```label 2
+<text from the second label>
+```
+
+and so on... 
+
+aim to segment all the labels correctly
+"""
 
 # Function to get Gemini response for text queries
 def get_text_response(question):
@@ -57,9 +78,9 @@ st.set_page_config(page_title="Gemini AI Analyzer")
 st.title("🔍 Gemini AI Vision & Q&A")
 
 # Tabs for Q&A and Image Analysis
-# tab1, tab2 = st.tabs(["📖 Text Q&A", "🖼️ Image Analysis"])
+tab1, tab2 = st.tabs(["📖 Text Q&A", "🖼️ Image Analysis"])
 # Tabs for Q&A, Image Analysis, and Embedded App
-tab1, tab2, tab3 = st.tabs(["📖 Text Q&A", "🖼️ Image Analysis", "🌐 Ollama"])
+# tab1, tab2, tab3 = st.tabs(["📖 Text Q&A", "🖼️ Image Analysis", "🌐 Ollama"])
 
 
 # Text-Based Q&A
@@ -141,16 +162,16 @@ with tab2:
 				
 
 # Embedded iframe App
-with tab3:
-    st.header("🌐 Embedded Ollama App")
-    components.html(
-        """
-        <iframe
-            src="https://cyberjerk-ollama.static.hf.space"
-            frameborder="0"
-            width="850"
-            height="850"
-        ></iframe>
-        """,
-        height=850,
-    )
+# with tab3:
+#     st.header("🌐 Embedded Textgenerateion App")
+#     components.html(
+#         """
+#         <iframe
+#             src="http://localhost:7860"
+#             frameborder="0"
+#             width="850"
+#             height="850"
+#         ></iframe>
+#         """,
+#         height=850,
+#     )
