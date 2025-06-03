@@ -5,7 +5,7 @@ sdk_version: 1.44.0
 app_file: appV1.py
 license: mit
 short_description: App analyzing images using Gemini AI Vision.
-python version=3.11
+python_version: 3.11
 ---
 
 
