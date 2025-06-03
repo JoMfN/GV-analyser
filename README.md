@@ -1,20 +1,12 @@
 ---
-title: Gemini Vision Analyzer
-emoji: ⚡
-colorFrom: pink
-colorTo: green
+title: GV-Label-Analyser
 sdk: streamlit
 sdk_version: 1.44.0
-app_file: app.py
-pinned: false
+app_file: appV1.py
 license: mit
 short_description: App analyzing images using Gemini AI Vision.
+python version=3.11
 ---
-
-
-
----
-
 
 ## Install
 
@@ -68,7 +60,7 @@ should fix any API errors at the start.
 ## Fire it up
 
 ```bash
-streamlit run appV0p5.py
+streamlit run appV1.py
 ```
 
 Navigate to `localhost:8501` in your browser
